@@ -9,7 +9,7 @@ class fakturomat extends Model
 {
     use HasFactory;
 
-    public function klienci(){
+    public function klient(){
         return $this->belongsTo('App\Models\klient');
 
     }

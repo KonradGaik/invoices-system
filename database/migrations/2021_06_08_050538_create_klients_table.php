@@ -17,7 +17,7 @@ class CreateKlientsTable extends Migration
             $table->id();
             $table->string('imie');
             $table->string('adres');
-            $table->integer('pesel');
+            $table->bigInteger('pesel');
             $table->timestamps();
         });
     }

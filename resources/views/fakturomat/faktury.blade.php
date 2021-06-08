@@ -31,7 +31,7 @@
 <td>{{$faktura->id}}</td> 
  <td>{{$faktura->number}}</td>
  <td>{{$faktura->kwota}}zł</td>
- <td>{{$klient->imie}}</td>
+ <td>{{$faktura->klient_id}} - {{$faktura->klient->imie}}</td>
  <td><a href="{{route('faktura.usun',['id'=>$faktura->id])}}" class="btn btn-danger"  >Usuń fakture<a></td>
  <td><a href="{{route('faktura.edycja',['id'=>$faktura->id])}}" class="btn btn-default"  >Edytuj fakture<a></td>
 </tr>

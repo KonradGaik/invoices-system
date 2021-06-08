@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1 class="header center orange-text">Utworz fakture</h1>
+<h1 class="header center orange-text">Utwórz fakture</h1>
 <div class="row">
     <form action="{{route('faktura.zapisz')}}" method="POST" class="col s12">
     {{csrf_field()}}

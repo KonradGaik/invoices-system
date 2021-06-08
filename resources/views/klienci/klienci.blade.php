@@ -10,7 +10,7 @@
 </div>
 @endif
 
-<h1 class="header center orange-text">Lista klientow</h1>
+<h1 class="header center orange-text">Lista klientów</h1>
 <div class="formularz" >
 <table>
         <thead>
