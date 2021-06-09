@@ -10,7 +10,13 @@
 </div>
 @endif
 
-<h1 class="header center orange-text">Wszystkie faktury</h1>
+<h1 class="header center orange-text">Lista faktur dla klienta:</h1>
+<h3 class=" orange-text">Dane klienta:</h3>
+<div class="black-text" style="font-size:20px">
+<p>Imie: {{$klient->imie}}</p>
+<p>Adres: {{$klient->adres}}</p>
+<p>Pesel: {{$klient->pesel}}</p>
+</div>
 <div class="formularz" >
 <table>
         <thead>
@@ -18,29 +24,27 @@
               <th>ID</th>
               <th>Numer faktury</th>
               <th>Kwota</th>
-              <th>Klient</th>
               <th>Usuń</th>
               <th>Edytuj</th>
           </tr>
         </thead>
 
         <tbody>
-       @foreach($faktury as $faktura)
+        @foreach($klient->invoices as $faktura)
        <div>
+    
        <tr>
 <td>{{$faktura->id}}</td> 
  <td>{{$faktura->number}}</td>
  <td>{{$faktura->kwota}}zł</td>
- <td>{{$faktura->klient_id}} - {{$faktura->klient->imie}}</td>
  <td><a href="{{route('faktura.usun',['id'=>$faktura->id])}}" class="btn btn-danger"  >Usuń fakture<a></td>
  <td><a href="{{route('faktura.edycja',['id'=>$faktura->id])}}" class="btn btn-default"  >Edytuj fakture<a></td>
 </tr>
       
-      
+
           </div>
-        @endforeach
+          @endforeach
         </tbody>
       </table>
-      {{$faktury->links('vendor.pagination.bootstrap-4')}}
       </div><br/> <br/>
 @endsection

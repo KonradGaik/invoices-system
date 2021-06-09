@@ -18,6 +18,12 @@ class KlienciController extends Controller
      return view('klienci.klienci',['klienci'=>$klients]);
     }
 
+    public function show($id)
+    {
+            $klient = klient::with('invoices')->where('id',$id)->firstOrFail();
+     return view('klienci.single',compact('klient'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

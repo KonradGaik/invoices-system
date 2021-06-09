@@ -18,7 +18,7 @@
       <li>  Witaj @Auth{{ Auth::user()->name }}@endAuth
             @guest gość @endguest
       </li>
-     <li><a href="{{route('faktury')}}">Twoje faktury</a></li>
+     <li><a href="{{route('faktury')}}">Lista faktur</a></li>
         <li><a href="{{route('utworz')}}">Utworz fakture</a></li>
         <li><a href="{{route('klienci.index')}}">Lista klientów</a></li>
         <li><a href="{{route('klienci.create')}}">Dodaj klienta</a></li> 

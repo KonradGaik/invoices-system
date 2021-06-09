@@ -19,6 +19,7 @@
               <th>Imie klienta</th>
               <th>Adres</th>
               <th>Pesel</th>
+              <th>Lista faktur</th>
           </tr>
         </thead>
 
@@ -30,6 +31,7 @@
  <td>{{$klient->imie}}</td>
  <td>{{$klient->adres}}</td>
  <td>{{$klient->pesel}}</td>
+ <td><a href="{{ route('klienci.show',['klienci'=>$klient->id]) }}" class="btn btn-primary">Lista faktur dla {{$klient->imie}}</a></td>
       
       
           </div>
