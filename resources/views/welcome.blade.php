@@ -10,7 +10,7 @@
         <h5 class="header col s12 light">Wszystkie Twoje faktury w jednym miejscu</h5>
       </div>
       <div class="row center">
-      <a href="{{route('faktury')}}" id="download-button" class="btn-large waves-effect waves-light orange">Twoje faktury</a>
+      <a href="{{route('faktury')}}" id="download-button" class="btn-large waves-effect waves-light orange">Lista wszystkich faktur</a>
       </div>
       <br><br>
 

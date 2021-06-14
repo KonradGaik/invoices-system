@@ -22,7 +22,7 @@
           </tr>
         </thead>
         <tbody>
-        @if(count($found)==0)
+        @if(count($found)==0 || $q == '')
         <h4 class="text-center orange-text">Nie znaleziono faktur - spróbuj wyszukać ponownie.</h4>
        <br/>    <br/>    <br/>
         @else

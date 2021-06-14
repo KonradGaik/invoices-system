@@ -32,6 +32,7 @@ class fakturomatController extends Controller
 
 
     public function zapisz(Request $request){
+   
        $faktura = new fakturomat();
        $faktura->number = $request->number;
        $faktura->date = $request->date;

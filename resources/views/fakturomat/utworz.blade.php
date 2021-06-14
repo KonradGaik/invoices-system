@@ -7,10 +7,10 @@
     {{csrf_field()}}
 
 <label for="">Wybierz klienta</label>
-    <select name="klient" class="form-select" aria-label="Default select example">
-  <option selected>Wybierz klienta z listy</option>
+    <select required name="klient" class="form-select" aria-label="Default select example">
+  <option  value="" hidden disabled="disabled" selected >Wybierz klienta z listy</option>
   @foreach(\App\Models\Klient::all() as $klient)
-  <option value="{{$klient->id}}">{{$klient->imie}}</option>
+  <option  value="{{$klient->id}}">{{$klient->imie}}</option>
  @endforeach
 </select> <br>
 
