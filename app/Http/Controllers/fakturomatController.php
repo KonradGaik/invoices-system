@@ -24,12 +24,21 @@ class fakturomatController extends Controller
         $faktura = fakturomat::find($id);
          return view('fakturomat.edytuj',['faktura'=>$faktura]);
      }
+
+     public function aktualizuj($id,Request $request){
+        $faktura = fakturomat::find($id);
+        $faktura->number = $request->number;
+        $faktura->date = $request->date;
+        $faktura->kwota = $request->kwota;
+        $faktura->klient_id = $request->id_klienta;
+        $faktura->save();
+        return redirect()->route('faktury')->with('message','Faktura poprawnie zaktualizowana!');
+     }
  
      public function utworz(){
 
          return view('fakturomat.utworz');
      }
-
 
     public function zapisz(Request $request){
    
@@ -41,16 +50,6 @@ class fakturomatController extends Controller
        $faktura->save();
        return redirect()->route('faktury')->with('message','Faktura poprawnie dodana!');
     }
-
-    public function aktualizuj($id,Request $request){
-        $faktura = new fakturomat();
-        $faktura->number = $request->number;
-        $faktura->date = $request->date;
-        $faktura->kwota = $request->kwota;
-        $faktura->save();
-        return redirect()->route('faktury')->with('message','Faktura poprawnie zaktualizowana!');
-     }
-
 
      public function usun($id){
         fakturomat::destroy($id);

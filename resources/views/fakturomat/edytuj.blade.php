@@ -20,8 +20,12 @@
           <input value="{{$faktura->kwota}}" id="kwota" type="text" name="kwota" class="validate" required="required">
           <label for="Kwota">Kwota</label>
         </div>
+
+<div style="height:0, width:0">
+          <input  style="width:0; height:0" value="{{$faktura->klient_id}}" id="id_klienta" type="text" name="id_klienta" class="validate" required="required" >
+          <label style="text-color:white;width:0; height:0; " for="id_klienta">Id klienta</label>
         <input class="waves-effect waves-light btn"  type="submit" value="edytuj">
-      </div>
+      </div></div>
     </form>
     
   </div>

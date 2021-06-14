@@ -25,8 +25,10 @@ Route::get('faktura/utworz', [fakturomatController::class,'utworz'])->name('utwo
 Route::get('/faktura/zapisz', [fakturomatController::class,'zapisz'])->name('faktura.zapisz');
 Route::post('/faktura/zapisz', [fakturomatController::class,'zapisz'])->name('faktura.zapisz');
 #edycja faktury
-Route::put('/faktura/edytuj/{id}',[fakturomatController::class,'edytuj'])->name('faktura.edycja')->middleware('auth');
-Route::get('/faktura/aktualizuj',[fakturomatController::class,'aktualizuj'])->name('faktura.aktualizacja')->middleware('auth');
+Route::get('faktura/edytuj/{id}',[fakturomatController::class,'edytuj'])->name('faktura.edycja')->middleware('auth');
+Route::get('faktura/aktualizuj/{id}',[fakturomatController::class,'aktualizuj'])->name('faktura.aktualizacja')->middleware('auth');
+Route::put('faktura/edytuj/{id}',[fakturomatController::class,'edytuj'])->name('faktura.edycja')->middleware('auth');
+Route::put('faktura/aktualizuj/{id}',[fakturomatController::class,'aktualizuj'])->name('faktura.aktualizacja')->middleware('auth');
 #usun fakture
 Route::get('/faktury/usun/{id}',[fakturomatController::class,'usun'])->name('faktura.usun')->middleware('auth');
 Route::delete('/faktury/usun/{id}',[fakturomatController::class,'usun'])->name('faktura.usun')->middleware('auth');
