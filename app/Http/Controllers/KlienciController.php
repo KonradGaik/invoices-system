@@ -64,3 +64,5 @@ class KlienciController extends Controller
        return redirect()->route('customers.index')->with('message','Poprawnie usunięto klienta.');
     }
 }
+
+

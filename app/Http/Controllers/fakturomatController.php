@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\fakturomat;
+use Illuminate\Support\Facades\DB;
 
 class fakturomatController extends Controller
 {
@@ -15,7 +16,7 @@ class fakturomatController extends Controller
 }
 
     public function faktury(){
-        $fakturomats = fakturomat::with('klient')->paginate(10);
+        $fakturomats = fakturomat::with('klient')->paginate(15);
         return view('fakturomat.faktury',['faktury'=>$fakturomats]);
     }
 
@@ -55,4 +56,10 @@ class fakturomatController extends Controller
         return redirect()->route('faktury')->with('message','Faktura poprawnie usunięta!');
      }
 
+
+public function search(Request $request){
+    $q = $request->get('q');
+    $faktury = fakturomat::with('klient')->where('number','LIKE','%'.$q.'%')->orWhere('kwota','LIKE','%'.$q.'%')->orWhere('date','LIKE','%'.$q.'%')->orWhere('id','LIKE','%'.$q.'%')->get();
+    return view('fakturomat.search',['found'=>$faktury],['q'=>$q]);
+}
 }

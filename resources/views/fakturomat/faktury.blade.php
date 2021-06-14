@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 
 @section('content')
 @if(session()->has('message'))
@@ -12,6 +12,18 @@
 
 <h1 class="header center orange-text">Wszystkie faktury</h1>
 <div class="formularz" >
+<h5 class="text-left orange-text">Wyszukaj faktury</h5>
+<form action="{{route('search')}}" method="GET" role="search">
+    {{ csrf_field() }}
+    <div class="form-group">
+        <input type="text" class="form-control" name="q"
+            placeholder="Podaj dane faktury"> <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search">Szukaj</span>
+            </button>
+        </span>
+    </div>
+</form>
 <table>
         <thead>
           <tr>

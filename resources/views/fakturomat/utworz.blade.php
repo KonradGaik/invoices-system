@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 
 @section('content')
 <h1 class="header center orange-text">Utwórz fakture</h1>
@@ -30,11 +30,8 @@
           <input id="kwota" type="text" name="kwota" class="validate" required="required">
           <label for="Kwota">Kwota</label><br/> <br/>
         </div>
-        <div class="input-field col s12">
-         <select><option value="">12233</option></select>
-        </div>
         <div >
-        <input class="waves-effect waves-light btn"   type="submit" value="utworz">
+        <input class="waves-effect waves-light btn"   type="submit" value="utwórz">
       </div>
     </form>
   </div>
